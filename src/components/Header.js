@@ -3,7 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/img/logo-white.png';
 
-
+const StyledHeader = styled.div`
+`
 
 const Header = ({loggedin, photo, username}) => {
     return (

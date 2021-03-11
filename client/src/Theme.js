@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
         --header-color:#444;
         --card-green-color:hsl(11,73%,66%);
+        --section-rotate: 9vw;
         font-size: 62.5%;
     }
     *,
@@ -16,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     body {
         width: 100%;
         height: 100%;
+        font-family: 'Lato', sans-serif;
+        line-height: 1.6;
     }
     main{
         padding: 0 2.4rem;

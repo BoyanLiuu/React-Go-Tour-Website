@@ -2,7 +2,11 @@ import styled from 'styled-components';
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-import logo from '../../assets/img/logo-green-round.png';
+import icon_flag from '../../assets/img/tourPageIcons/flag.svg';
+import icon_user from '../../assets/img/tourPageIcons/user.svg';
+import icon_map_pin from '../../assets/img/tourPageIcons/map-pin-green.svg';
+import icon_calendar from '../../assets/img/tourPageIcons/calendar.svg';
+
 
 const StyledCard = styled.div`
     border-radius: 3px;
@@ -79,15 +83,11 @@ const StyledCard = styled.div`
         -ms-flex-align: center;
         align-items: center;
     }
-    
-    .card__data svg {
-        margin-right: 0.7rem;
-    }
 
     .card__icon {
+        margin-right: 0.7rem;
         height: 2rem;
         width: 2rem;
-        fill: #55c57a;
     }
 
     .card__footer {
@@ -114,8 +114,8 @@ const StyledCard = styled.div`
         grid-row: 2 / 3;
     }
 
-    .card .btn-small,
-    .card .btn {
+    .btn-small,
+    .btn {
         grid-row: 1 / 3;
         justify-self: end;
         -ms-flex-item-align: center;
@@ -149,14 +149,12 @@ const Card = ({data}) => {
                 <p className="card__text">{data.summary}</p>
                 
                 <div className="card__data">
-                    {/* #icon-map-pin */}
-                    <img className="card__icon" src={logo}/>
-                    <span>{data.startLocation.description}</span>
+                    <img className="card__icon" src={icon_map_pin}/>
+                    <span> {data.startLocation.description}</span>
                 </div>
 
                 <div className="card__data">
-                    {/* #icon-calendar */}
-                    <img className="card__icon" src={logo}/>                 
+                    <img className="card__icon" src={icon_calendar}/>                 
                     <span>
                         {new Date(data.startDates[0])
                             .toLocaleString('en-US', {month: 'long', year: 'numeric'})}
@@ -165,17 +163,16 @@ const Card = ({data}) => {
                 </div>
 
                 <div className="card__data">
-                    {/* #icon-flag */}
-                    <img className="card__icon" src={logo}/>
+                    <img className="card__icon" src={icon_flag}/>
                     <span>{data.locations.length} stops</span>
                 </div>
 
                 <div className="card__data">
-                    {/* #icon-user */}
-                    <img className="card__icon" src={logo}/>
+                    <img className="card__icon" src={icon_user}/>
                     <span>{data.maxGroupSize} people</span>
                 </div>
             </div>
+            
             <div className="card__footer">
                 <p>
                     <span className="card__footer-value">${data.price} </span>
@@ -183,8 +180,8 @@ const Card = ({data}) => {
                 </p>
 
                 <p className="card__ratings">
-                    <span className="card__footer-value">{data.ratingsAverage}</span>
-                    <span className="card__footer-text">({data.ratingsQuantity})</span>
+                    <span className="card__footer-value">{data.ratingsAverage} </span>
+                    <span className="card__footer-text">rating ({data.ratingsQuantity})</span>
                 </p>
                 
                 <Link className="btn btn--green btn--small" href={`/tour/${data.id}`}>Details</Link>

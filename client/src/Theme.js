@@ -26,4 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     a{
         text-decoration:none;
     }
+    .ma-bt-lg {
+    margin-bottom: 3.5rem !important;
+}
 `;

@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const StyledTourMap = styled.div`
-`
+const StyledTourMap = styled.section`
+    position: relative;
+    height: 65rem;
+    margin-top: calc(0px - var(--section-rotate));
+`;
 
-const TourMap = () => {
-    return (
-        <StyledTourMap>
-            <p> This is map</p>
-        </StyledTourMap>
-    );
+const TourMap = ({ data }) => {
+    const locations = JSON.stringify(data.locations);
+    return <StyledTourMap></StyledTourMap>;
 };
 
 export default TourMap;

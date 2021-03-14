@@ -283,6 +283,41 @@ function useToggle(initialValue = true) {
 
 function Auth() {
     const [authSwitch, turnSwitch] = useToggle();
+    const [formData, setFormData] = useState({
+        new_username: "",
+        new_email: "",
+        new_password: "",
+        email: "",
+        password: ""
+    });
+
+    const handleChange = (e) => {
+        const {id, value} = e.target
+        setFormData(prevData => ({
+            ...prevData,
+            [id]:  value
+        }))
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (authSwitch) {
+            console.log("Logging in with email="+formData.email+", password="+formData.password);
+            setFormData(prevData => ({
+                ...prevData,
+                email:  "",
+                password: ""
+            }));
+        } else {
+            console.log("Signing up with username="+formData.new_username+", email="+formData.new_email+", password="+formData.new_password);
+            setFormData(prevData => ({
+                ...prevData,
+                new_username: "",
+                new_email:  "",
+                new_password: ""
+            }))
+        }
+    }
 
     return (
         <StyledAuthPage>
@@ -290,15 +325,17 @@ function Auth() {
             <div className="form sign-in">
                 <h2>Welcome back,</h2>
                 <label>
-                <span>Email</span>
-                <input type="email" />
+                    <span>Email</span>
+                    <input type="email" id="email" aria-describedby="email input"
+                            value={formData.email}  onChange={handleChange}/>
                 </label>
                 <label>
-                <span>Password</span>
-                <input type="password" />
+                    <span>Password</span>
+                    <input type="password" id="password" aria-describedby="password input"
+                        value={formData.password}  onChange={handleChange}/>
                 </label>
                 <p className="forgot-pass">Forgot password?</p>
-                <button type="button" className="submit">Sign In</button>
+                <button type="button" className="submit" onClick={handleSubmit}>Sign In</button>
                 <button type="button" className="fb-btn">Connect with <span>facebook</span></button>
             </div>
             <div className="sub-cont">
@@ -319,18 +356,21 @@ function Auth() {
                 <div className="form sign-up">
                 <h2>Time to feel like home,</h2>
                 <label>
-                    <span>Name</span>
-                    <input type="text" />
+                    <span>Username</span>
+                    <input type="text" id="new_username" aria-describedby="email input" 
+                        value={formData.new_username} onChange={handleChange}/>
                 </label>
                 <label>
                     <span>Email</span>
-                    <input type="email" />
+                    <input type="email" id="new_email" aria-describedby="email input"
+                        value={formData.new_email}  onChange={handleChange}/>
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password" />
+                    <input type="password" id="new_password" aria-describedby="password input"
+                        value={formData.new_password}  onChange={handleChange}/>
                 </label>
-                <button type="button" className="submit">Sign Up</button>
+                <button type="button" className="submit" onClick={handleSubmit}>Sign Up</button>
                 <button type="button" className="fb-btn">Join with <span>facebook</span></button>
                 </div>
             </div>

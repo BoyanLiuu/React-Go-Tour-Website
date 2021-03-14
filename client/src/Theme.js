@@ -35,7 +35,6 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         font-family: 'Lato', sans-serif;
         color: #777;
-        padding: 3rem;
         min-height: 100vh;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -90,11 +89,24 @@ export const GlobalStyle = createGlobalStyle`
         z-index: 10;
     }
 
-
-    main{
-        padding: 0 2.4rem;
+    .heading-secondary {
+        font-size: 2.25rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-image: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(#7dd56f),
+            to(#28b487)
+        );
+        background-image: linear-gradient(to right, #7dd56f, #28b487);
+        -webkit-background-clip: text;
+        color: transparent;
+        letter-spacing: 0.1rem;
+        line-height: 1.3;
+        display: inline-block;
     }
-
     a{
         text-decoration:none;
     }

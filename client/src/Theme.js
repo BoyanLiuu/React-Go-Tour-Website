@@ -44,7 +44,18 @@ export const GlobalStyle = createGlobalStyle`
         -ms-flex-direction: column;
         flex-direction: column;
     }
+    main{
+        background-color: #f7f7f7;
 
+    }
+
+    .ma-bt-md {
+        margin-bottom: 3rem !important;
+        }   
+
+    .ma-bt-lg {
+        margin-bottom: 3.5rem !important;
+    }
     .heading-primary,
     .heading-tertirary {
         color: #fff;

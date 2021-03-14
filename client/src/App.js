@@ -8,6 +8,7 @@ function App() {
         <Router>
             <Header/>
             <GlobalStyle />
+            <main>
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/tour/:id" component={Tour} />
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/signup" component={Auth} />
                 <Route  component={ErrorPage} />
             </Switch>
+            </main>
             <Footer/>
         </Router>
     );

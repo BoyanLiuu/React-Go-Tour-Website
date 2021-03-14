@@ -1,4 +1,11 @@
-import { TourHero, TourDesc, TourPics, TourMap } from './../components/index';
+import {
+    TourHero,
+    TourDesc,
+    TourPics,
+    TourMap,
+    TourReview,
+    TourCTA,
+} from './../components/index';
 const tempData = {
     startLocation: {
         description: 'Miami, USA',
@@ -64,6 +71,8 @@ function Tour() {
             <TourDesc data={tempData} />
             <TourPics data={tempData} />
             <TourMap data={tempData} />
+            <TourReview data={tempData} />
+            <TourCTA data={tempData} />
         </>
     );
 }

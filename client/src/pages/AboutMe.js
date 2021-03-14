@@ -1,6 +1,20 @@
+import {
+    SideMenu,
+    Setting,
+    Booking,
+    MyReviews,
+    Billing,
+} from './../components/index';
+
 function AboutMe() {
     return (
-        <p> About Me  page</p>
+        <>
+            <SideMenu />
+            <Setting />
+            <Booking />
+            <MyReviews />
+            <Billing />
+        </>
     );
 }
 

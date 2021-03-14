@@ -6,6 +6,7 @@ import {
     TourReview,
     TourCTA,
 } from './../components/index';
+
 const tempData = {
     startLocation: {
         description: 'Miami, USA',
